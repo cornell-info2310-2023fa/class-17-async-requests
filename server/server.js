@@ -50,8 +50,12 @@ app.get('/api/docs.json', (req, res) => {
 });
 
 app.get('/api/docs/:id.json', (req, res) => {
-  const doc = reactDocs.find(doc => (doc.id == req.params.id))
-  res.json(doc);
+  const doc = reactDocs.find(doc => (doc.id == req.params.id));
+  if (doc) {
+    res.json(doc);
+  } else {
+    res.status(404).json({message: 'not found'});
+  }
 });
 
 // 404

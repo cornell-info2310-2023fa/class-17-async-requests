@@ -12,7 +12,7 @@ export default function AccordionPanel({
       <h3
         style={{ color: (darkMode ? 'white' : 'black') }}
         onClick={onActivate}>
-        {(isExpanded ? '→' : '↓') + ' ' + title}
+        {(isExpanded ? '↓' : '→') + ' ' + title}
       </h3>
       {isExpanded && (<p style={{ color: (darkMode ? 'white' : 'black') }}>{children}</p>)}
     </section>
